@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.auth {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: url("https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop") no-repeat center center/cover;
+    position: relative;
+}
+
+.auth::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    /* dark overlay */
+    z-index: 0;
+}
+.auth .logo{
+    background: #ffffff;
+    display: inline-block;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+/* Box */
+.auth-box {
+    width: 350px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+}
+
+/* Toggle */
+.auth-toggle {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    color: white;
+    border-radius: 20px;
+}
+
+.toggle-btn.active {
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+}
+
+/* Forms */
+.auth-form {
+    display: none;
+}
+
+.auth-form.active {
+    display: block;
+}
+
+/* Inputs */
+.auth-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+/* Button */
+.auth-form button {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    color: white;
+    cursor: pointer;
+}
+
+/* Success */
+.success-msg {
+    display: none;
+    margin-top: 15px;
+    color: #4ade80;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+.auth-box.shake {
+    animation: shake 0.3s;
+}
